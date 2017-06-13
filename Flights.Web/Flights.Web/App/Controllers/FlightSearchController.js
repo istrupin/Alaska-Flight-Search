@@ -2,9 +2,11 @@
 
     $scope.test = 'test';
     $scope.flights = [];
+    $scope.from;
+    $scope.to;
 
     $scope.getFlights = function () {
-        dataService.getPositionStatistics.query({ fromDate: $scope.fromDate.toLocaleDateString(), toDate: $scope.toDate.toLocaleDateString() }, function (response) {
+        dataService.getPositionStatistics.query({ from: $scope.from, to: $scope.to }, function (response) {
             $scope.flights = response;
         });
     };
