@@ -1,24 +1,51 @@
-﻿<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>ASP.NET Web API is a framework that makes it easy to build HTTP services that reach
-        a broad range of clients, including browsers and mobile devices. ASP.NET Web API
-        is an ideal platform for building RESTful applications on the .NET Framework.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301870">Learn more &raquo;</a></p>
+﻿
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reconciliation </title>
+    <link rel='shortcut icon' href='~/favicon.ico' type='image/x-icon' />
+    @Styles.Render("~/Content/css")
+    <base href="/" />
+    <meta name="runningPath" content="@ViewBag.Version">
+</head>
+<body>
+    <div id="main">
+        <div class="content container-fluid">
+                <div class="col-md-12" id="container-main">
+                    <div ng-view ng-cloak></div>
+                    <div class="row" ng-controller="FlightSearchController">
+                        <form>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput">{{test}}</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput2">Another label</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput">Example label</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput2">Another label</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row" ng-controller="GridController">
+                        <div class="col-md-6">table goes here {{test}}</div>
+                    </div>
+                </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301871">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301872">Learn more &raquo;</a></p>
-    </div>
-</div>
+    @Scripts.Render("~/bundles/other")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/application")
+</body>
+</html>

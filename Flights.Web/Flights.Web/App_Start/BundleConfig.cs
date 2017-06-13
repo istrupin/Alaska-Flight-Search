@@ -23,6 +23,21 @@ namespace Flights.Web
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/other").Include(
+                       "~/Scripts/jquery-1.10.2.min.js",
+                       "~/Scripts/angular.min.js",
+                       "~/Scripts/angular-resource.js",
+                       "~/Scripts/ui-grid.min.js",
+                       "~/Scripts/ui-bootstrap-tpls-2.5.0.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/application").Include(
+                        "~/App/*.js",
+                        "~/App/Controllers/*.js",
+                        "~/app/Services/*.js"));
+
+            BundleTable.EnableOptimizations = false;
+
         }
     }
 }

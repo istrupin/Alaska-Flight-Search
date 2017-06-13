@@ -33,7 +33,6 @@ namespace Flights.Data.Repositories
             return Airports;
         }
 
-
     }
   
 }
