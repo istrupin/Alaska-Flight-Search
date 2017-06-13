@@ -15,3 +15,21 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.grid-content {
+    width: 70%;
+    margin-top: 40px;
+}
+.myGrid {
+    width: 500px;
+    height: 250px;
+}
+
+.ui-grid-header-cell {
+    float: left;
+    height: 30px !important;
+}
+.ui-grid-header-cell-wrapper {
+    height: 30px !important;
+}
+

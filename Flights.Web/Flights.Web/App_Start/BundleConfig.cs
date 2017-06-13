@@ -22,7 +22,8 @@ namespace Flights.Web
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/ui-grid.css",
+                      "~/Content/Site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/other").Include(
                        "~/Scripts/jquery-1.10.2.min.js",
