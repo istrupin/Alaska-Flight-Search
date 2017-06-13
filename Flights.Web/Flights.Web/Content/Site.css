@@ -20,6 +20,7 @@ textarea {
 .grid-content {
     width: 70%;
     margin-top: 40px;
+    height: 60vh;
 }
 .myGrid {
     width: 500px;
