@@ -19,11 +19,11 @@
             </div>
 
         </nav>
-        <div class="content container-fluid">
+        <div class="content container">
             <div class="col-md-12" id="container-main">
                 <div ng-view ng-cloak></div>
                 <div class="row" ng-controller="FlightSearchController">
-                    <div class="col-md-4">
+                    <div class="col-md-8">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 Search Flights
@@ -31,18 +31,18 @@
                             <div class="panel-body">
                                 
                                 <form class="form-inline">
-                                    <label class="" for="email">From:</label>
                                     <div class="form-group">
+                                        <label for="email">Email address:</label>
                                         <input type="email" class="form-control" id="email">
                                     </div>
-                                    <label class="" for="email">To:</label>
-
                                     <div class="form-group">
+                                        <label for="pwd">Password:</label>
                                         <input type="password" class="form-control" id="pwd">
                                     </div>
-                                    <div class="form-group">
-                                        <button class="btn btn-default">hi</button>
+                                    <div class="">
+                                        <button type="submit" class="btn btn-default">Submit</button>
                                     </div>
+                                    
                                 </form>
                             </div>
                         </div>
@@ -50,10 +50,8 @@
                     
                 </div>
                 <hr />
-                <div>hi</div>
                 <div ng-controller="GridController">
                     <div>
-                        <div class="row"><div class="col-md-6">table goes here {{test}}</div></div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div id="flightsGrid"
