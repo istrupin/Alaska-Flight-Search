@@ -4,4 +4,4 @@ This is a SPA to allow users to search for flights based on origin and destinati
 
 ### Setup
 
-To run, simply add the locations of the necessary data .csv files to the Web.Config file in the <appSettings> section.  Then build, compile, and run.
+To run, simply add the locations of the necessary data .csv files to the Web.Config file in the <appSettings> section.  Then build, compile, and run.  Note that the Visual Studio Solution file is inside Flights.Web
