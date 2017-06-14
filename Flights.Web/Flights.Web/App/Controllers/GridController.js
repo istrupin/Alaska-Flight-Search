@@ -22,13 +22,13 @@
         showGridFooter: true,
         gridFooterTemplate: '<div class="grid-footer">Total items: {{grid.appScope.flights.length}}</div>',
         columnDefs: [
-            { field: 'From', displayName: 'From', visible: true },
-            { field: 'To', displayName: 'To', visible: true },
-            { field: 'FlighNumber', displayName: 'FlightNumber', sort: { direction: 'asc', priority: 0 }, width: 100 },
+            { field: 'From', displayName: 'From', visible: true, width: 70},
+            { field: 'To', displayName: 'To', visible: true, width: 70 },
+            { field: 'FlighNumber', displayName: 'FlightNumber', sort: { direction: 'asc', priority: 0 }, width: 150 },
             { field: 'Departs', displayName: 'Departs', visible: true },
             { field: 'Arrives', displayName: 'Arrives', visible: true },
             { field: 'MainCabinPrice', displayName: 'MainCabinPrice', visible: true },
-            { field: 'FirstClassPrice', displayName: 'FirstClassPrice', visible: true },
+            { field: 'FirstClassPrice', displayName: 'FirstClassPrice', visible: true, width: 150 },
 
         ],
         showFooter: true,

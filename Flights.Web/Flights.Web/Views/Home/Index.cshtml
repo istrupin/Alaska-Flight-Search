@@ -23,8 +23,8 @@
             <div class="col-md-12" id="container-main">
                 <div ng-view ng-cloak></div>
                 <div class="row" ng-controller="FlightSearchController">
-                    <div class="col-md-8">
-                        <div class="panel panel-default">
+                    <div class="col-md-6">
+                        <div class="panel panel-info">
                             <div class="panel-heading">
                                 Search Flights
                             </div>
@@ -32,15 +32,15 @@
                                 
                                 <form class="form-inline">
                                     <div class="form-group">
-                                        <label for="email">Email address:</label>
-                                        <input type="email" class="form-control" id="email">
+                                        <label for="from">From:</label>
+                                        <input type="text" class="form-control" id="from">
                                     </div>
                                     <div class="form-group">
-                                        <label for="pwd">Password:</label>
-                                        <input type="password" class="form-control" id="pwd">
+                                        <label for="to">To:</label>
+                                        <input type="text" class="form-control" id="to">
                                     </div>
                                     <div class="">
-                                        <button type="submit" class="btn btn-default">Submit</button>
+                                        <button id="search" type="submit" class="btn btn-info">Submit</button>
                                     </div>
                                     
                                 </form>
@@ -51,7 +51,6 @@
                 </div>
                 <hr />
                 <div ng-controller="GridController">
-                    <div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div id="flightsGrid"
@@ -62,7 +61,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
