@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reconciliation </title>
+    <title>Search Flights </title>
     <link rel='shortcut icon' href='~/favicon.ico' type='image/x-icon' />
     @Styles.Render("~/Content/css")
     <base href="/" />
@@ -23,26 +23,29 @@
             <div class="col-md-12" id="container-main">
                 <div ng-view ng-cloak></div>
                 <div class="row" ng-controller="FlightSearchController">
-                    <div class="col-md-6">
+                    <div class="col-md-12 ">
                         <div class="panel panel-info">
                             <div class="panel-heading">
                                 Search Flights
                             </div>
                             <div class="panel-body">
                                 
-                                <form class="form-inline" ng-submit="getFlights()">
+                                <form class="form-inline col-md-12" ng-submit="getFlights()">
+                                    
                                     <div class="form-group">
                                         <label for="from">From:</label>
                                         <select type="text" class="form-control" id="from" ng-model="from">
-                                            <option ng-repeat="option in airportCodes" value="{{option}}">{{option}}</option>
+                                            <option ng-repeat="option in airports" value="{{option.Code}}">{{option.Name}}</option>
                                             </select>
                                     </div>
-                                    <div class="form-group">
+                                    <div id="toBox" class="form-group">
                                         <label for="to">To:</label>
-                                        <input type="text" class="form-control" id="to" ng-model="to">
+                                        <select type="text" class="form-control" id="to" ng-model="to">
+                                            <option ng-repeat="option in airports" value="{{option.Code}}">{{option.Name}}</option>
+                                        </select>
                                     </div>
-                                    <div class="">
-                                        <button id="search" type="submit" class="btn btn-info">Submit</button>
+                                    <div class="form-group">
+                                        <button id="search" type="submit" class="btn btn-info pull-right">Submit</button>
                                     </div>
                                     
                                 </form>

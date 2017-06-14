@@ -4,26 +4,19 @@
     $scope.flights = [];
     $scope.from;
     $scope.to;
-    $scope.airportCodes = [];
+    $scope.airports = [];
 
-
-    var airports = [];
 
     $scope.getAirports = function () {
         dataService.airports.query({}, function (response) {
-            airports = response;
-
-            $scope.airportCodes = response.map(function (o) {
-                return o.Code;
-            })
-
-            console.log('airports', $scope.airportCodes);
+            $scope.airports = response;
         })
     }
 
 
     $scope.getFlights = function () {
         dataService.flights.query({ from: $scope.from, to: $scope.to }, function (response) {
+            $scope.flights = [];
             $scope.flights = response;
             console.log('sending', response);
             $rootScope.$broadcast('searchResultsReady', response);
