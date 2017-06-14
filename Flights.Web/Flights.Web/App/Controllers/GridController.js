@@ -1,13 +1,12 @@
 ﻿app.controller('GridController', ['$scope', '$http', '$rootScope', '$attrs', 'uiGridConstants', function ($scope, $http, $rootScope, $attrs, uiGridConstants) {
 
     $scope.test = 'test';
-    $scope.flights = [{
-        From: 'SFO',
-        To: 'SEA',
-        FlightNumber: '15',
-        MainCabinPrice: '100.00',
-        FirstClassPrice: '200.00'
-    }];
+    $scope.flights = [];
+
+    $scope.$on('searchResultsReady', function (event, data) {
+        console.log('receiving',data);
+        $scope.flights = data;
+    })
 
     $scope.gridOptions = {
         enableRowSelection: true,
@@ -20,15 +19,15 @@
         enableGridMenu: true,
         showGroupPanel: true,
         showGridFooter: true,
-        gridFooterTemplate: '<div class="grid-footer">Total items: {{grid.appScope.flights.length}}</div>',
+        gridFooterTemplate: '<div class="grid-footer">Number of flights: {{grid.appScope.flights.length}}</div>',
         columnDefs: [
-            { field: 'From', displayName: 'From', visible: true, width: 70},
+            { field: 'From', displayName: 'From', visible: true, minWidth: 65},
             { field: 'To', displayName: 'To', visible: true, width: 70 },
-            { field: 'FlighNumber', displayName: 'FlightNumber', sort: { direction: 'asc', priority: 0 }, width: 150 },
-            { field: 'Departs', displayName: 'Departs', visible: true },
-            { field: 'Arrives', displayName: 'Arrives', visible: true },
-            { field: 'MainCabinPrice', displayName: 'MainCabinPrice', visible: true },
-            { field: 'FirstClassPrice', displayName: 'FirstClassPrice', visible: true, width: 150 },
+            { field: 'FlightNumber', displayName: 'FlightNumber', width: 150 },
+            { field: 'Departs', displayName: 'Departs', visible: true, type: 'date', sort: { direction: 'asc', priority: 0 }, cellFilter: 'date:\'h:mm a\'' },
+            { field: 'Arrives', displayName: 'Arrives', visible: true, type: 'date', cellFilter: 'date:\'h:mm a\'' },
+            { field: 'MainCabinPrice', displayName: 'Main Cabin Price', visible: true, type:'number', minWisth: 220 },
+            { field: 'FirstClassPrice', displayName: 'First Class Price', visible: true, type: 'number', minWidth: 170 },
 
         ],
         showFooter: true,

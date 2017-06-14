@@ -26,8 +26,9 @@ namespace Flights.Web.Controllers
         // POST api/values
         public IEnumerable<Flight> Get(string from, string to)
         {
-            var flights = _flightRepository.GetFlights().Where(t => t.From == from && t.To == to);
-            return flights;
+            var flights = _flightRepository.GetFlights();
+            var filteredFlights = flights.Where(t => t.From == from && t.To == to);
+            return filteredFlights;
         }
 
     }
