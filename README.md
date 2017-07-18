@@ -7,7 +7,7 @@ This is a SPA to allow users to search for flights based on origin and destinati
 To run, simply add the locations of the necessary data .csv files to the Web.Config file in the <appSettings> section.  Then: 
 
 #### AngularJS
-Checkout master, build, compile, and run.
+git checkout master, compile and run with Visual Studio.
 
 #### React
 I've included the build assets in this repository, so to run, just git checkout react, compile the VS solution in Visual Studio, and run.  There is no need to build or compile anything with NPM.  The repository for the react project is [here](https://github.com/istrupin/alaska-flight-search-react).
