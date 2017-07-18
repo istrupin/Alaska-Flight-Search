@@ -1,76 +1,22 @@
 ﻿
-<html ng-app="app">
+<html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Flights </title>
-    <link rel='shortcut icon' href='~/favicon.ico' type='image/x-icon' />
     @Styles.Render("~/Content/css")
     <base href="/" />
     <meta name="runningPath" content="@ViewBag.Version">
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
 </head>
 <body>
-    <div id="main">
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="~/">Flights</a>
-                </div>
-            </div>
 
-        </nav>
-        <div class="content container">
-            <div class="col-md-12" id="container-main">
-                <div ng-view ng-cloak></div>
-                <div class="row" ng-controller="FlightSearchController">
-                    <div class="col-md-12 ">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                Search Flights
-                            </div>
-                            <div class="panel-body">
-                                
-                                <form class="form-inline col-md-12" ng-submit="getFlights()">
-                                    
-                                    <div class="form-group">
-                                        <label for="from">From:</label>
-                                        <select type="text" class="form-control" id="from" ng-model="from">
-                                            <option ng-repeat="option in airports" value="{{option.Code}}">{{option.Name}}</option>
-                                            </select>
-                                    </div>
-                                    <div id="toBox" class="form-group">
-                                        <label for="to">To:</label>
-                                        <select type="text" class="form-control" id="to" ng-model="to">
-                                            <option ng-repeat="option in airports" value="{{option.Code}}">{{option.Name}}</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <button id="search" type="submit" class="btn btn-info pull-right">Submit</button>
-                                    </div>
-                                    
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr />
-                <span class="h3" id="results">Results:</span>
+    <noscript>
+        You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
 
-                <div ng-controller="GridController">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div id="flightsGrid"
-                                     ui-grid-selection
-                                     ui-grid-resize-columns
-                                     class="grid-content"
-                                     ui-grid="gridOptions">
-                                </div>
-                            </div>
-                        </div>
-                </div>
-            </div>
-        </div>
-    </div>
     @Scripts.Render("~/bundles/other")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/application")
