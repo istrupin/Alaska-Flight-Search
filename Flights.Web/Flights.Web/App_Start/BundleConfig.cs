@@ -18,11 +18,11 @@ namespace Flights.Web
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/Site.css",
-                      "~/Content/main.1b7fa95c.css"));
+                      "~/Content/main.*"));
 
 
             bundles.Add(new ScriptBundle("~/bundles/application").Include(
-                        "~/Scripts/main.776e03e8.js"));
+                        "~/Scripts/main.*"));
 
             BundleTable.EnableOptimizations = false;
 
